@@ -14,7 +14,9 @@ body {
     overflow-x: hidden;
 }
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
 
 header {
     position: fixed;
@@ -68,7 +70,9 @@ nav button:hover::after {
     width: 100%;
 }
 
-/* PÁGINAS */
+/* =========================================================
+   PÁGINAS
+========================================================= */
 
 .pagina {
     min-height: 100vh;
@@ -93,7 +97,9 @@ nav button:hover::after {
     }
 }
 
-/* INÍCIO */
+/* =========================================================
+   INÍCIO
+========================================================= */
 
 .inicio {
     display: flex;
@@ -118,7 +124,9 @@ nav button:hover::after {
     opacity: 0.9;
 }
 
-/* CONTADOR */
+/* =========================================================
+   CONTADOR
+========================================================= */
 
 .contador {
     margin-top: 40px;
@@ -135,7 +143,9 @@ nav button:hover::after {
     margin-bottom: 10px;
 }
 
-/* TÍTULOS */
+/* =========================================================
+   TÍTULOS
+========================================================= */
 
 .titulo {
     text-align: center;
@@ -145,7 +155,21 @@ nav button:hover::after {
     color: #ff4d88;
 }
 
-/* GALERIA */
+/* =========================================================
+   GALERIA
+========================================================= */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================================================
+   GALERIA
+========================================================= */
 
 .galeria {
     display: grid;
@@ -187,12 +211,43 @@ nav button:hover::after {
     transform: scale(1.08);
 }
 
+/* LEGENDA APARECE AO PASSAR O MOUSE */
+
 .foto p {
-    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 18px 15px;
+
+    margin: 0;
+
     text-align: center;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.9)
+    );
+
+    color: white;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: 0.4s ease;
+
+    pointer-events: none;
 }
 
-/* MÚSICAS */
+.foto:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   MÚSICAS
+========================================================= */
 
 .musicas {
     max-width: 900px;
@@ -232,7 +287,9 @@ iframe {
     border-radius: 15px;
 }
 
-/* BOTÃO EU TE AMO ❤️ */
+/* =========================================================
+   BOTÃO EU TE AMO
+========================================================= */
 
 .botao-amor {
     margin-top: 30px;
@@ -262,7 +319,9 @@ iframe {
     transform: scale(0.95);
 }
 
-/* MENSAGEM ❤️ */
+/* =========================================================
+   MENSAGEM
+========================================================= */
 
 #mensagem-amor {
     text-align: center;
@@ -277,7 +336,9 @@ iframe {
     margin: 5px;
 }
 
-/* CORAÇÕES ❤️ */
+/* =========================================================
+   CORAÇÕES
+========================================================= */
 
 .coracao {
     position: fixed;
@@ -312,7 +373,9 @@ iframe {
     }
 }
 
-/* ANTES E DEPOIS ❤️ */
+/* =========================================================
+   ANTES E DEPOIS
+========================================================= */
 
 .antes-depois {
     display: grid;
@@ -353,7 +416,9 @@ iframe {
     font-size: 15px;
 }
 
-/* FOOTER */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
     text-align: center;
@@ -362,7 +427,9 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* SCROLLBAR */
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -373,7 +440,9 @@ footer {
     border-radius: 20px;
 }
 
-/* CELULAR 📱 */
+/* =========================================================
+   CELULAR
+========================================================= */
 
 @media (max-width: 700px) {
 
@@ -413,5 +482,429 @@ footer {
     .antes-depois .lado img {
         width: 250px;
         height: 250px;
+    }
+}
+
+/* =========================================================
+   CONVERSA SIMULADA ❤️
+   SOMENTE A PARTE DA CONVERSA
+========================================================= */
+
+.conversa-container {
+    width: 390px;
+    height: 760px;
+    margin: 0 auto;
+
+    background: #0b0b0b;
+
+    border: 1px solid #292929;
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+
+/* TOPO DA CONVERSA */
+
+.conversa-topo {
+    width: 100%;
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 12px;
+    gap: 10px;
+
+    background: #111;
+
+    border-bottom: 1px solid #292929;
+
+    box-sizing: border-box;
+}
+
+.conversa-voltar {
+    color: white;
+    font-size: 38px;
+    line-height: 1;
+}
+
+.conversa-foto {
+    width: 44px !important;
+    height: 44px !important;
+
+    min-width: 44px !important;
+    max-width: 44px !important;
+
+    min-height: 44px !important;
+    max-height: 44px !important;
+
+    border-radius: 50% !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    flex-shrink: 0 !important;
+}
+
+.conversa-nome {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    color: white;
+}
+
+.conversa-nome strong {
+    font-size: 15px;
+}
+
+.conversa-nome span {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.conversa-pesquisa,
+.conversa-menu {
+    color: white;
+    font-size: 23px;
+}
+
+/* CHAT */
+
+.conversa-chat {
+    width: 100%;
+    height: calc(100% - 131px);
+
+    padding: 18px 12px 25px;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #191919 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            #191919 1px,
+            transparent 1px
+        ),
+        #0b0b0b;
+
+    background-size: 35px 35px;
+
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.conversa-chat::-webkit-scrollbar {
+    width: 4px;
+}
+
+.conversa-chat::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+/* LINHA DAS MENSAGENS */
+
+.mensagem-linha {
+    width: 100%;
+
+    display: flex;
+
+    margin: 9px 0;
+
+    opacity: 0;
+
+    transform: translateY(12px);
+
+    transition: .3s ease;
+}
+
+.mensagem-linha.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mensagem-linha.eu {
+    justify-content: flex-end;
+}
+
+.mensagem-linha.ela {
+    justify-content: flex-start;
+}
+
+/* BALÕES */
+
+.mensagem-balao {
+    max-width: 80%;
+
+    padding: 10px 13px;
+
+    border-radius: 18px;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    color: white;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.mensagem-linha.eu .mensagem-balao {
+    background: #fe2c55;
+    border-bottom-right-radius: 5px;
+}
+
+.mensagem-linha.ela .mensagem-balao {
+    background: #262626;
+    border-bottom-left-radius: 5px;
+}
+
+/* RESPOSTA */
+
+.mensagem-resposta {
+    display: flex;
+
+    align-items: stretch;
+
+    margin-bottom: 8px;
+
+    background: #333;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.mensagem-resposta::before {
+    content: "";
+
+    width: 3px;
+
+    background: #aaa;
+
+    flex-shrink: 0;
+}
+
+.resposta-conteudo {
+    padding: 7px 9px;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    min-width: 0;
+}
+
+.resposta-conteudo strong {
+    display: block;
+
+    color: #ddd;
+
+    margin-bottom: 2px;
+
+    font-size: 12px;
+}
+
+/* VÍDEO */
+
+.conversa-video {
+    width: 190px;
+    height: 260px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background: #222;
+
+    flex-shrink: 0;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.5);
+}
+
+.conversa-video img {
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 0 !important;
+    max-width: none !important;
+
+    min-height: 0 !important;
+    max-height: none !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+}
+
+.conversa-video.no-image {
+    background: linear-gradient(
+        145deg,
+        #222,
+        #171717
+    );
+}
+
+/* PLAY */
+
+.conversa-play {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, .65);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-size: 23px;
+
+    padding-left: 3px;
+
+    pointer-events: none;
+}
+
+/* LABEL DO VÍDEO */
+
+.conversa-video-label {
+    position: absolute;
+
+    bottom: 10px;
+    left: 10px;
+
+    background: rgba(0, 0, 0, .65);
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 11px;
+
+    pointer-events: none;
+}
+
+/* CONTROLES */
+
+.conversa-controles {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 65px;
+
+    padding: 10px;
+
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+
+    background: #111;
+
+    border-top: 1px solid #292929;
+
+    box-sizing: border-box;
+}
+
+#proximaConversa {
+    flex: 1;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #fe2c55;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+#reiniciarConversa {
+    width: 45px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #292929;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+#proximaConversa:hover,
+#reiniciarConversa:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+/* =========================================================
+   RESPONSIVO DA CONVERSA
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .conversa-container {
+        width: 100%;
+        max-width: 390px;
+        height: 760px;
+        border-radius: 20px;
+    }
+
+    .mensagem-balao {
+        font-size: 14px;
+    }
+
+    .conversa-video {
+        width: 190px;
+        height: 260px;
     }
 }
