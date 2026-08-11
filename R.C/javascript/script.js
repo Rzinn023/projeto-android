@@ -37,5 +37,41 @@ function atualizarTempo(){
 }
 
 setInterval(atualizarTempo,1000);
+atualizarContador();
 
-atualizarTempo();
+// BOTÃO EU TE AMO ❤️
+function euTeAmo() {
+
+    const mensagem = document.getElementById("mensagem-amor");
+
+    mensagem.innerHTML = `
+        <p>Eu te amo mais do que consigo explicar. ❤️</p>
+        <p>Você é uma das melhores partes da minha vida. ❤️</p>
+    `;
+
+    // Criar vários corações
+    for (let i = 0; i < 15; i++) {
+
+        const coracao = document.createElement("div");
+
+        coracao.classList.add("coracao");
+
+        coracao.innerHTML = "❤️";
+
+        coracao.style.left = Math.random() * 100 + "vw";
+
+        coracao.style.animationDuration =
+            (3 + Math.random() * 2) + "s";
+
+        coracao.style.fontSize =
+            (18 + Math.random() * 20) + "px";
+
+        document.body.appendChild(coracao);
+
+        // Remover depois da animação
+        setTimeout(() => {
+            coracao.remove();
+        }, 5000);
+    }
+}
+

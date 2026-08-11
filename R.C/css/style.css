@@ -226,3 +226,89 @@ transition:.4s;color:#fff
 footer{border-top:1px solid rgba(255,255,255,.08)}
 ::-webkit-scrollbar{width:10px}
 ::-webkit-scrollbar-thumb{background:#ff4d88;border-radius:20px}
+
+/* BOTÃO EU TE AMO ❤️ */
+
+.botao-amor {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.botao-amor button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.35);
+    transition: 0.3s;
+}
+
+.botao-amor button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.5);
+}
+
+.botao-amor button:active {
+    transform: scale(0.95);
+}
+
+
+/* MENSAGEM */
+
+#mensagem-amor {
+    text-align: center;
+    margin-top: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    animation: aparecer 0.6s ease;
+}
+
+#mensagem-amor p {
+    margin: 5px;
+}
+
+
+/* CORAÇÕES */
+
+.coracao {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: subirCoracao 4s linear forwards;
+    z-index: 9999;
+}
+
+@keyframes subirCoracao {
+
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
